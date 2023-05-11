@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startPageFragment2">
+    <fragment
+        android:id="@+id/startPageFragment2"
+        android:name="com.example.splitexpenses.StartPageFragment"
+        android:label="fragment_start_page"
+        tools:layout="@layout/fragment_start_page" >
+        <action
+            android:id="@+id/action_startPageFragment2_to_transactionsFragment2"
+            app:destination="@id/transactionsFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/transactionsFragment2"
+        android:name="com.example.splitexpenses.TransactionsFragment"
+        android:label="fragment_transactions"
+        tools:layout="@layout/fragment_transactions" >
+        <action
+            android:id="@+id/action_transactionsFragment2_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="com.example.splitexpenses.SummaryFragment"
+        android:label="fragment_summary"
+        tools:layout="@layout/fragment_summary" >
+        <action
+            android:id="@+id/action_summaryFragment_to_startPageFragment2"
+            app:destination="@id/startPageFragment2" />
+    </fragment>
+</navigation>
