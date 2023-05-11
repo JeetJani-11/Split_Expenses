@@ -35,7 +35,7 @@ class SplitViewModel : ViewModel() {
         allTransactions.add("$by spends ${amount.toInt()} owed by ${owedBy.value!!.joinToString(" ")}")
     }
 
-    fun minCashFlowRec(amount: MutableList<Double>, names: List<String>) {
+    private fun minCashFlowRec(amount: MutableList<Double>, names: List<String>) {
 
         val mxCredit = amount.indexOf(amount.toList().max())
         val mxDebit = amount.indexOf(amount.toList().min())
@@ -62,6 +62,7 @@ class SplitViewModel : ViewModel() {
     }
 
     fun updateTransactions() {
+       netTransactions.value!!.clear()
         val amount = mutableListOf<Double>()
         val names = mutableListOf<String>()
 
